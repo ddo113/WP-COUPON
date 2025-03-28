@@ -1,0 +1,496 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+/* General Coupon Styles */
+.wp-coupon-container {
+    margin: 20px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.wp-coupon-container:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.wp-coupon-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px dashed #e0e0e0;
+    background-color: #f9f9f9;
+}
+
+.wp-coupon-store-thumb {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.wp-coupon-store-thumb img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.wp-coupon-store-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.wp-coupon-discount {
+    margin-left: auto;
+    font-size: 18px;
+    font-weight: bold;
+    color: #e91e63;
+    padding: 10px 15px;
+    border-radius: 3px;
+    background-color: #ffeef4;
+    display: inline-block;
+}
+
+.wp-coupon-content {
+    padding: 15px;
+}
+
+.wp-coupon-title {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.wp-coupon-description {
+    margin-bottom: 15px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.wp-coupon-expiry {
+    font-size: 13px;
+    color: #888;
+    margin-top: 10px;
+}
+
+.wp-coupon-expired-text {
+    color: #f44336;
+}
+
+.wp-coupon-code-section {
+    padding: 15px;
+    border-top: 1px dashed #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.wp-coupon-code-wrap {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 100%;
+}
+
+.wp-coupon-code {
+    font-family: monospace;
+    padding: 8px 12px;
+    background-color: #f5f5f5;
+    border: 1px dashed #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-right: 10px;
+    flex: 1;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 200px;
+    min-width: 150px;
+    height: 38px;
+    line-height: 22px;
+    box-sizing: border-box;
+}
+
+.wp-coupon-hidden {
+    letter-spacing: normal;
+    background-color: #f5f5f5;
+    color: #888;
+    pointer-events: none;  /* Disable clicking */
+    color: #999;
+}
+
+/* Hide the Go to Deal button initially */
+.wp-coupon-go-hidden {
+    display: none;
+}
+
+.wp-coupon-code-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.wp-coupon-code-button:hover {
+    background-color: #388e3c;
+}
+
+.wp-coupon-go {
+    display: inline-block;
+    background-color: #2196f3;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.wp-coupon-go:hover {
+    background-color: #1976d2;
+    color: white;
+    text-decoration: none;
+}
+
+/* Coupons List */
+.wp-coupons-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Style Variations */
+
+/* Minimal Style */
+.wp-coupon-style-minimal {
+    box-shadow: none;
+    border: 1px solid #eee;
+}
+
+.wp-coupon-style-minimal .wp-coupon-header {
+    background-color: transparent;
+    border-bottom: 1px solid #eee;
+}
+
+.wp-coupon-style-minimal .wp-coupon-discount {
+    background-color: transparent;
+}
+
+.wp-coupon-style-minimal .wp-coupon-code-section {
+    border-top: 1px solid #eee;
+}
+
+/* Card Style */
+.wp-coupon-style-card {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wp-coupon-style-card .wp-coupon-header {
+    border-radius: 8px 8px 0 0;
+    border-bottom: none;
+    background-color: #f5f5f5;
+}
+
+.wp-coupon-style-card .wp-coupon-store-thumb {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.wp-coupon-style-card .wp-coupon-code-section {
+    background-color: #f9f9f9;
+    border-radius: 0 0 8px 8px;
+    border-top: none;
+}
+
+.wp-coupon-style-card .wp-coupon-code {
+    border-radius: 20px;
+}
+
+.wp-coupon-style-card .wp-coupon-code-button,
+.wp-coupon-style-card .wp-coupon-go {
+    border-radius: 20px;
+}
+
+/* List Style */
+.wp-coupons-style-list {
+    display: block;
+}
+
+.wp-coupons-style-list .wp-coupon-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.wp-coupons-style-list .wp-coupon-header {
+    width: 200px;
+    border-bottom: none;
+    border-right: 1px dashed #e0e0e0;
+    min-height: 120px;
+}
+
+.wp-coupons-style-list .wp-coupon-content {
+    flex: 1;
+    min-width: 200px;
+}
+
+.wp-coupons-style-list .wp-coupon-code-section {
+    width: 250px;
+    border-top: none;
+    border-left: 1px dashed #e0e0e0;
+    min-height: 120px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Expired Coupon Styles */
+.wp-coupon-expired {
+    opacity: 0.7;
+}
+
+.wp-coupon-expired:before {
+    content: 'EXPIRED';
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background-color: #f44336;
+    color: white;
+    padding: 5px 40px;
+    font-size: 12px;
+    transform: rotate(45deg);
+    z-index: 1;
+    text-align: center;
+}
+
+/* Tooltip for copied message */
+.wp-coupon-tooltip {
+    position: fixed;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    z-index: 9999;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.wp-coupon-tooltip.show {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .wp-coupons-style-list .wp-coupon-header,
+    .wp-coupons-style-list .wp-coupon-content,
+    .wp-coupons-style-list .wp-coupon-code-section {
+        width: 100%;
+        border-right: none;
+        border-left: none;
+        min-height: auto;
+    }
+    
+    .wp-coupons-style-list .wp-coupon-header {
+        border-bottom: 1px dashed #e0e0e0;
+    }
+    
+    .wp-coupons-style-list .wp-coupon-code-section {
+        border-top: 1px dashed #e0e0e0;
+    }
+    
+    .wp-coupon-code-wrap {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .wp-coupon-code {
+        margin-right: 0;
+        margin-bottom: 10px;
+        max-width: 100%;
+    }
+}
+/* Modal styling for coupon reveal */
+#wp-coupon-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0; width: 100%; height: 100%;
+}
+
+.wp-coupon-modal-backdrop {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.wp-coupon-modal-content {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 300px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.wp-coupon-modal-close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.wp-coupon-code-display {
+    font-size: 24px;
+    font-weight: bold;
+    background: #f0f0f0;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* Modal styling for coupon reveal */
+#wp-coupon-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    font-family: Arial, sans-serif;
+}
+
+.wp-coupon-modal-content {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.wp-coupon-modal-content h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.wp-coupon-modal-close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.wp-coupon-modal-close:hover {
+    color: #000;
+}
+
+.wp-coupon-code-display {
+    font-size: 22px;
+    font-weight: bold;
+    background: #f4f4f4;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    display: inline-block;
+    user-select: all;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.wp-coupon-modal-description {
+    margin-top: 1rem;
+    font-size: 15px;
+    color: #666;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.copy-button {
+    margin-top: 1rem;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.copy-button:hover {
+    background-color: #005bb5;
+}
+
+.redeem-button {
+    margin-top: 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.redeem-button:hover {
+    background-color: #218838;
+}
+
+.wp-coupon-code-button {
+    background-color: #ff4d4d !important; /* roșu deschis */
+    color: white !important;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.wp-coupon-code-button:hover {
+    background-color: #e60000 !important;
+}
